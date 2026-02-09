@@ -1,0 +1,193 @@
+/* Slider Pro CSS */
+.slider-pro {
+    position: relative;
+    margin: 0 auto;
+}
+
+.sp-slides-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.sp-slides {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sp-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.sp-slide.sp-selected {
+    opacity: 1;
+    position: relative;
+}
+
+.sp-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slider Navigation */
+.sp-arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.sp-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255,255,255,0.8);
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.sp-arrow:hover {
+    background-color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.sp-previous-arrow {
+    left: 20px;
+}
+
+.sp-next-arrow {
+    right: 20px;
+}
+
+/* Slider Buttons */
+.sp-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+.sp-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #178cc6;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sp-button:hover {
+    background-color: rgba(23,140,198,0.3);
+}
+
+.sp-selected-button {
+    background-color: #178cc6;
+}
+
+/* Fullscreen Button */
+.sp-full-screen-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.8);
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.sp-full-screen-button:hover {
+    background-color: #fff;
+    transform: scale(1.1);
+}
+
+/* Touch Swipe */
+.sp-grab {
+    cursor: grab;
+}
+
+.sp-grabbing {
+    cursor: grabbing;
+}
+
+/* Loading State */
+.sp-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #4a8eff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Responsive Slider */
+@media (max-width: 768px) {
+    .sp-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    
+    .sp-previous-arrow {
+        left: 10px;
+    }
+    
+    .sp-next-arrow {
+        right: 10px;
+    }
+    
+    .sp-button {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .sp-full-screen-button {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+        top: 10px;
+        right: 10px;
+    }
+}
